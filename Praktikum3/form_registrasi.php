@@ -93,6 +93,9 @@
         <th>Domisili</th>
         <th>Program Studi</th>
         <th>Skill Programming</th>
+        <th>Skor Skill</th> 
+        <th>Kategori Skill</th>
+        
     </tr>
 
     <?php 
@@ -104,6 +107,7 @@
         $domisili = $_POST['domisili'];
         $program_studi = $_POST['program_studi'];
         $skill_user = $_POST['skill'];
+        $skor = 0
     ?>
 
     <tr>
@@ -118,6 +122,48 @@
         } ?></td>
     </tr>
 
+      foreach ($skills as $skill) { 
+                     switch($skill) { 
+                         case 'HTML' : 
+                             $skor += 10; 
+                             break; 
+                         case 'CSS' : 
+                             $skor += 10; 
+                             break; 
+                         case 'JavaScrip' : 
+                             $skor += 20; 
+                             break; 
+                         case 'RWD Bootstrap' : 
+                             $skor += 20; 
+                             break; 
+                         case 'PHP' : 
+                             $skor += 30; 
+                             break; 
+                         case 'Python' : 
+                             $skor += 30; 
+                             break; 
+                         case 'JAVA' : 
+                             $skor += 50; 
+                             break; 
+                     }; 
+                 }; 
+                 $kategori_skill = cekRange($skor); 
+             ?> 
+             <tr> 
+                 <td><?= $nama; ?></td> 
+                 <td><?= $nim; ?></td> 
+                 <td><?= $email; ?></td> 
+                 <td><?= $jenis_kelamin; ?></td> 
+                 <td><?= $domisili; ?></td> 
+                 <td><?= $program_studi; ?></td> 
+                 <td> 
+                     <?php foreach($skills as $skill){ 
+                     echo $skill, ","; } ?> 
+                 </td> 
+                 <td><?= $skor; ?></td> 
+                 <td><?= $kategori_skill; ?></td> 
+             </tr> 
+                 
     <?php } ?>
 
 </table>
