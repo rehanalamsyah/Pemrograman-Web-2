@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RegistrasiAnggotaController;
+use App\Http\Controllers\RegistrasiPeminjamanBuku;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +20,23 @@ Route::get('/', function () {
 });
 
 Route::get('/salam', function () {
-    return ('Assalamualaikum');
+    return ('Assalamualaikum Ukhty');
 });
 
 Route::get('/kabar', function () {
     return view('kondisi');
 });
 
-Route::get('/', function () {
+Route::get('/nilai', function () {
     return view('nilai');
 });
+
+Route::get('/tes-kesehatan', function () {
+    return view('tes_kesehatan');
+});
+
+Route::get('/form-registrasi-anggota', [RegistrasiAnggotaController::class, 'index']);
+Route::post('/hasil-regist', [RegistrasiAnggotaController::class, 'hasil']);
+
+Route::get('/form-peminjaman-buku', [RegistrasiPeminjamanBuku::class, 'index']);
+Route::post('/hasil-pinjam', [RegistrasiPeminjamanBuku::class, 'hasil']);
