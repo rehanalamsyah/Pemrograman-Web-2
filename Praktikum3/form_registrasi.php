@@ -150,7 +150,11 @@
                  $kategori_skill = cekRange($skor); 
              ?> 
              <tr> 
+<<<<<<< HEAD
                  <td><?= $nama; ?></td> 
+=======
+                 <td><?= $nama; ?></td> 
+>>>>>>> ad5b4ec90d6911d3c04dbb32e41aad255c21d5e7
                  <td><?= $nim; ?></td> 
                  <td><?= $email; ?></td> 
                  <td><?= $jenis_kelamin; ?></td> 
